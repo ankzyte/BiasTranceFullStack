@@ -1,0 +1,61 @@
+/* ── Wrapper ─────────────────────────────────────────── */
+.ls-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  min-height: 80px;
+}
+
+/* ── Ring spinner ─────────────────────────────────────── */
+.ls-spinner-ring {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.ls-spinner-ring span {
+  display: block;
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  animation: ring-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.ls-spinner-ring span:nth-child(1) {
+  border-top-color: #e50914;
+  animation-delay: -0.45s;
+}
+.ls-spinner-ring span:nth-child(2) {
+  border-top-color: rgba(229, 9, 20, 0.5);
+  animation-delay: -0.3s;
+}
+.ls-spinner-ring span:nth-child(3) {
+  border-top-color: rgba(229, 9, 20, 0.25);
+  animation-delay: -0.15s;
+}
+.ls-spinner-ring span:nth-child(4) {
+  border-top-color: rgba(229, 9, 20, 0.1);
+}
+
+@keyframes ring-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ── End message ──────────────────────────────────────── */
+.ls-end-message {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #444;
+  margin: 0;
+  animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

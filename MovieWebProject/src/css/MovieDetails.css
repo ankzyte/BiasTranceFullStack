@@ -1,0 +1,367 @@
+/* ── Page shell ───────────────────────────────────────── */
+.md-page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #eee;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  position: relative;
+  padding-bottom: 4rem;
+}
+
+/* ── Hero backdrop ────────────────────────────────────── */
+.md-hero {
+  position: absolute;
+  inset: 0;
+  height: 480px;
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+}
+
+.md-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.35) 0%,
+    rgba(10, 10, 10, 0.85) 70%,
+    #0a0a0a 100%
+  );
+}
+
+/* ── Main content area ────────────────────────────────── */
+.md-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem 2rem;
+  align-items: flex-start;
+}
+
+/* ── Poster ───────────────────────────────────────────── */
+.md-poster {
+  flex-shrink: 0;
+  width: 220px;
+}
+
+.md-poster img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  display: block;
+}
+
+.md-poster__placeholder {
+  width: 220px;
+  aspect-ratio: 2/3;
+  background: #1c1c1c;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+/* ── Info panel ───────────────────────────────────────── */
+.md-info {
+  flex: 1;
+  padding-top: 1rem;
+}
+
+.md-info__title {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  color: #fff;
+}
+
+.md-info__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.md-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #ccc;
+  letter-spacing: 0.02em;
+}
+
+.md-badge--rating {
+  background: rgba(229, 9, 20, 0.15);
+  border-color: rgba(229, 9, 20, 0.35);
+  color: #ff6b6b;
+}
+
+.md-info__genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.md-genre {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #aaa;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.md-info__overview {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: #bbb;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+/* ── Trailer button area ──────────────────────────────── */
+.md-trailer-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.md-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.6rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    opacity 0.15s;
+}
+
+.md-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.md-btn--trailer {
+  background: #e50914;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(229, 9, 20, 0.35);
+  letter-spacing: 0.03em;
+}
+
+.md-btn--trailer:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(229, 9, 20, 0.5);
+}
+
+.md-btn--trailer:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.md-btn--reviews {
+  background: rgba(255, 255, 255, 0.08);
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.03em;
+}
+
+.md-btn--reviews:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+.md-btn--reviews:active {
+  transform: translateY(0);
+}
+
+/* Favourite button on detail page — same shape as MovieCard */
+.favorite-btn--detail {
+  width: 44px;
+  height: 44px;
+  font-size: 1.4rem;
+  background-color: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
+  flex-shrink: 0;
+}
+
+.favorite-btn--detail:hover {
+  background-color: rgba(232, 69, 60, 0.4);
+  transform: scale(1.1);
+}
+
+.favorite-btn--detail.active {
+  color: #e50914;
+}
+
+/* Spinner inside button */
+.md-btn__spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.md-trailer-area__notice {
+  font-size: 0.83rem;
+  color: #f88;
+  background: rgba(255, 100, 100, 0.08);
+  border: 1px solid rgba(255, 100, 100, 0.2);
+  padding: 0.4rem 0.85rem;
+  border-radius: 5px;
+  animation: fadeNotice 0.3s ease;
+}
+
+@keyframes fadeNotice {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ── Cast section ─────────────────────────────────────── */
+.md-cast {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+}
+
+.md-cast__heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.md-cast__grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+.md-cast__card {
+  flex-shrink: 0;
+  width: 100px;
+  text-align: center;
+}
+
+.md-cast__card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.md-cast__no-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #1c1c1c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.md-cast__name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #ddd;
+  margin: 0 0 0.15rem;
+  line-height: 1.3;
+}
+
+.md-cast__char {
+  font-size: 0.66rem;
+  color: #777;
+  margin: 0;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+/* ── Loading / error states ───────────────────────────── */
+.md-state {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1rem;
+  background: #0a0a0a;
+}
+
+.md-state--error {
+  color: #f66;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 680px) {
+  .md-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 3.5rem 1rem 2rem;
+    text-align: center;
+  }
+
+  .md-poster {
+    width: 160px;
+  }
+
+  .md-info__genres,
+  .md-info__meta,
+  .md-trailer-area {
+    justify-content: center;
+  }
+
+  .md-info__overview {
+    font-size: 0.9rem;
+  }
+}

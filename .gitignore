@@ -1,0 +1,15 @@
+# Python
+BiasTrance/__pycache__/
+BiasTrance/*.pyc
+BiasTrance/venv/
+BiasTrance/instance/
+BiasTrance/*.db
+
+# Node
+MovieWebProject/node_modules/
+MovieWebProject/dist/
+MovieWebProject/.env
+
+# OS
+.DS_Store
+Thumbs.db

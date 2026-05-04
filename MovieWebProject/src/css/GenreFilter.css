@@ -1,0 +1,65 @@
+/* ── Scroll wrapper ───────────────────────────────────── */
+.gf-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-bottom: 1.5rem;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 3%,
+    black 97%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 3%,
+    black 97%,
+    transparent 100%
+  );
+}
+.gf-wrapper::-webkit-scrollbar { display: none; }
+
+/* ── Pill track ───────────────────────────────────────── */
+.gf-track {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  width: max-content;
+}
+
+/* ── Individual pill ──────────────────────────────────── */
+.gf-pill {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #aaa;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.12s;
+}
+.gf-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+.gf-pill--active {
+  background: #e50914;
+  border-color: #e50914;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(229, 9, 20, 0.35);
+}
+.gf-pill--active:hover {
+  background: #c8000f;
+  border-color: #c8000f;
+  transform: translateY(-1px);
+}

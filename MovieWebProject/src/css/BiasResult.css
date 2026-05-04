@@ -1,0 +1,139 @@
+/* ── Bias Result Card ─────────────────────────────────── */
+.bias-result {
+  margin-top: 1rem;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  border: 1px solid transparent;
+  animation: biasSlideIn 0.3s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+@keyframes biasSlideIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bias-result--biased {
+  border-color: rgba(255, 79, 79, 0.25);
+  background: rgba(255, 79, 79, 0.05);
+}
+
+.bias-result--neutral {
+  border-color: rgba(45, 212, 160, 0.25);
+  background: rgba(45, 212, 160, 0.05);
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.bias-result__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.bias-result__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.bias-result__close {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+.bias-result__close:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* ── Badges ───────────────────────────────────────────── */
+.bias-badge {
+  display: inline-block;
+  padding: 0.22rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: var(--font-mono, monospace);
+}
+
+.bias-badge--biased {
+  background: rgba(255, 79, 79, 0.15);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 79, 79, 0.3);
+}
+
+.bias-badge--neutral {
+  background: rgba(45, 212, 160, 0.12);
+  color: #2dd4a0;
+  border: 1px solid rgba(45, 212, 160, 0.3);
+}
+
+.bias-badge--conf {
+  background: rgba(255, 255, 255, 0.06);
+  color: #aaa;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bias-badge--emotion {
+  background: rgba(139, 92, 246, 0.12);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  text-transform: capitalize;
+}
+
+/* ── Confidence bar ───────────────────────────────────── */
+.bias-conf-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+}
+
+.bias-conf-bar__fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bias-conf-bar__fill--biased  { background: #ff6b6b; }
+.bias-conf-bar__fill--neutral { background: #2dd4a0; }
+
+/* ── Explanation list ─────────────────────────────────── */
+.bias-explanation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.bias-explanation__item {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #bbb;
+  line-height: 1.55;
+}
+
+.bias-explanation__bullet {
+  color: #555;
+  flex-shrink: 0;
+  margin-top: 0.05em;
+}
