@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import "../css/Navbar.css";
 
@@ -8,6 +8,7 @@ function NavBar() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handler = (e) => {
@@ -28,7 +29,16 @@ function NavBar() {
   return (
     <nav className="navbar">
       <NavLink to="/" className="navbar-brand">
-        CINE<span>VERSE</span>
+        {location.pathname.startsWith("/analyze") ||
+        location.pathname.startsWith("/analysis") ? (
+          <>
+            BIAS<span>TRANCE</span>
+          </>
+        ) : (
+          <>
+            CINE<span>VERSE</span>
+          </>
+        )}
       </NavLink>
 
       <div className="navbar-links">
